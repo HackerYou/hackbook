@@ -3,7 +3,7 @@ Hackbook::Application.routes.draw do
   post 'friendships/:friend_id' => 'friendships#create', as: :friendship
   resources :posts
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users
 
   root 'home#index'
