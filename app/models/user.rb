@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-  validates :email, presence: true
+  #validates :email, presence: true
 
   has_many :posts
   has_many :friendships
