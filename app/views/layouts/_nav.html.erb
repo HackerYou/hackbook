@@ -21,6 +21,10 @@
           </div>
         <% end %>
 
+        <% if user_signed_in? %>
+          <div class='navbar-left navbar-text'>Signed in as <%= current_user.name %> (<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>)</div>
+        <% end %>
+
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "New Post +", new_post_path %></li>
         </ul>
